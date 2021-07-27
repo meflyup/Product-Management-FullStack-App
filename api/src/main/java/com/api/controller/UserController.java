@@ -41,6 +41,7 @@ public class UserController {
             return new ResponseEntity<>(HttpStatus.CONFLICT);
         }
         user.setRole(Role.USER);
+        user.setEnabled(true);
         return new ResponseEntity<>(userService.saveUser(user), HttpStatus.CREATED);
     }
 
